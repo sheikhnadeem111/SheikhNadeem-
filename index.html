@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NadyMods</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+            color: #ffffff;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #container {
+            max-width: 500px;
+            width: 100%;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #4baaff;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        #loading-bar {
+            width: 100%;
+            background: #333;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            position: relative;
+            height: 20px;
+        }
+
+        #progress {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #4baaff, #007bb5);
+            transition: width 0.4s ease;
+        }
+
+        .loading {
+            font-size: 1rem;
+            color: #eeeeee;
+            font-style: italic;
+        }
+
+        .completed {
+            font-size: 1rem;
+            color: #00ff00;
+            font-weight: bold;
+            display: none;
+        }
+
+        .reward img {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .reward img:hover {
+            transform: scale(1.05);
+        }
+
+        .developer-details {
+            font-size: 0.875rem;
+            margin-top: 30px;
+        }
+
+        .developer-name, .telegram-label {
+            color: #bbbbbb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 5px 0;
+        }
+
+        .developer-name img, .telegram-label img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+
+        .developer-bold {
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .btn {
+            display: none;
+            padding: 12px 30px;
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #ffffff;
+            background: linear-gradient(90deg, #4baaff, #007bb5);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+.icon {
+        filter: brightness(0) invert(1);
+    }
+        
+        .btn:hover {
+            background: linear-gradient(90deg, #007bb5, #4baaff);
+            transform: translateY(-3px);
+        }
+    </style>
+    <script>
+        function simulateProgress() {
+            var elem = document.getElementById("progress");
+            var width = 0;
+            var id = setInterval(frame, 30);
+            function frame() {
+                if (width >= 100) {
+                    clearInterval(id);
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('completion').style.display = 'block';
+                    document.getElementById('loading-bar').style.display = 'none';
+                    document.querySelector('.btn').style.display = 'inline-block';
+                } else {
+                    width++;
+                    elem.style.width = width + '%';
+                }
+            }
+        }
+
+        window.onload = function() {
+            simulateProgress();
+        };
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div class="reward">
+            <img src="20240518_005151.png" alt="Reward">
+        </div>
+
+        <h1>⭐ NadyMods ⭐</h1>
+        <div id="loading-bar">
+            <div id="progress"></div>
+        </div>
+        <p class="loading" id="loading">Please wait...</p>
+        <p class="completed" id="completion">Pin Verified Successfully 🎉</p>
+
+<a class="btn" href="https://dailyrewardsformodapps.on.drv.tw/www.pin.com">Open App</a>
+
+        
+        
+
+<div class="developer-details">
+    <p class="developer-name">
+        <img class="icon" src="https://img.icons8.com/ios-filled/50/000000/internet.png" alt="Website Icon">
+        Powered By: <span class="developer-bold"><a href="https://NadyMods.com/">NadyMods</a></span>
+    </p>
+    <p class="telegram-label">
+        <img class="icon" src="https://img.icons8.com/ios-filled/50/000000/telegram-app.png" alt="Telegram Icon">
+        Telegram: <span class="developer-bold"><a href="https://telegram.me/NadyMods">@NadyMods</a></span>
+    </p>
+</div>
+
+            </div>
+</body>
+</html>
